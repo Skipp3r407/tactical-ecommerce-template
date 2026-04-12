@@ -47,10 +47,10 @@ body {
   @apply outline-2 outline-offset-2 outline-brand-500;
 }
 
-/* Premium card — subtle red lift on hover */
+/* Premium card — tight ember rim on hover (keeps glow close to the card edge) */
 .elevate-card {
   @apply transition-[transform,box-shadow,border-color] duration-300 ease-out will-change-transform;
 }
 .elevate-card:hover {
-  @apply -translate-y-0.5 border-brand-600/25 shadow-[0_28px_90px_-52px_rgba(220,38,38,0.2),0_20px_60px_-55px_rgba(234,88,12,0.08)];
+  @apply -translate-y-px border-brand-600/30 shadow-[0_0_0_1px_rgba(220,38,38,0.18),0_0_18px_-2px_rgba(220,38,38,0.2),0_0_28px_-6px_rgba(234,88,12,0.07)];
 }

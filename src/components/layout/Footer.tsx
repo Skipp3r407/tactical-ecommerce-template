@@ -55,7 +55,8 @@ export function Footer() {
                 alt={`${SITE_NAME} logo`}
                 width={118}
                 height={118}
-                className="h-[118px] w-[118px] object-contain"
+                sizes="(max-width: 640px) 80px, 118px"
+                className="h-20 w-20 shrink-0 object-contain sm:h-24 sm:w-24 md:h-[118px] md:w-[118px]"
               />
               <div className="text-center sm:text-left">
                 <span className="sr-only">{SITE_NAME_SHORT}</span>

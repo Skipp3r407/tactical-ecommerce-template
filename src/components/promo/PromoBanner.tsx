@@ -27,12 +27,12 @@ export function PromoBanner({ banner, className }: { banner: PromoBannerType; cl
             alt=""
             fill
             className="object-cover opacity-[0.22] transition duration-500 group-hover:opacity-[0.3] group-hover:scale-[1.02]"
-            sizes="(max-width:768px) 100vw, 50vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-surface-950/88 via-surface-950/65 to-surface-950/40" />
         </div>
       ) : null}
-      <div className="pointer-events-none absolute -right-12 -top-12 z-[1] h-32 w-32 rounded-full bg-brand-600/20 blur-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-hover:bg-brand-600/15" />
+      <div className="pointer-events-none absolute -right-6 -top-5 z-[1] h-20 w-20 rounded-full bg-brand-600/22 blur-lg opacity-0 transition-opacity duration-300 group-hover:opacity-90 group-hover:bg-brand-600/18" />
       <div className="relative z-10">
         <p className="text-sm font-semibold tracking-tight text-white">{banner.title}</p>
         {banner.subtitle ? <p className="mt-2 text-sm leading-relaxed text-zinc-400">{banner.subtitle}</p> : null}

@@ -19,7 +19,7 @@ export function CategoryCard({ category, className }: { category: Category; clas
             alt={`${category.name} — shop category`}
             fill
             className="object-cover transition duration-500 group-hover:scale-[1.04]"
-            sizes="(max-width:768px) 100vw, 25vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 25vw, 320px"
           />
         ) : null}
         <div className="absolute inset-0 bg-gradient-to-t from-surface-950 via-surface-950/20 to-transparent" />

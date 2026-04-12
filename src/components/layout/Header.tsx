@@ -44,15 +44,36 @@ export function Header() {
           : "border-transparent bg-surface-950/65 backdrop-blur-md",
       )}
     >
-      <div className="mx-auto flex min-w-0 max-w-7xl flex-nowrap items-center justify-between gap-2 px-4 py-3 md:gap-4 md:py-4">
-        <Link href="/" className="group flex shrink-0 items-center">
+      <div className="mx-auto flex min-w-0 max-w-7xl flex-nowrap items-center gap-2 px-3 py-2 sm:px-4 sm:py-3 md:gap-4 md:py-4 lg:justify-between">
+        <button
+          type="button"
+          className="inline-flex shrink-0 min-h-[44px] min-w-[44px] items-center justify-center rounded-lg border border-white/15 bg-white/5 text-white lg:hidden"
+          aria-expanded={open}
+          aria-label={open ? "Close menu" : "Open menu"}
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span className="sr-only">Menu</span>
+          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            {open ? (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            )}
+          </svg>
+        </button>
+
+        <Link
+          href="/"
+          className="group flex min-w-0 flex-1 items-center justify-center lg:max-w-none lg:flex-none lg:justify-start"
+        >
           <Image
             src={images.logo}
             alt=""
             width={413}
             height={413}
             priority
-            className="h-[413px] w-[413px] object-contain"
+            sizes="(max-width: 1024px) 160px, 200px"
+            className="h-7 w-auto max-h-9 object-contain object-center sm:h-8 sm:max-h-10 md:h-9 lg:h-10 lg:object-left"
           />
           <span className="sr-only">{SITE_NAME}</span>
         </Link>
@@ -83,28 +104,11 @@ export function Header() {
             Shop now
           </Button>
         </div>
-
-        <button
-          type="button"
-          className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg border border-white/15 bg-white/5 text-white lg:hidden"
-          aria-expanded={open}
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span className="sr-only">Menu</span>
-          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            {open ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
-        </button>
       </div>
 
       {open ? (
-        <div className="border-t border-white/10 bg-surface-950 px-4 py-4 lg:hidden">
-          <div className="flex flex-col gap-1">
+        <div className="max-h-[min(70dvh,calc(100dvh-8rem))] overflow-y-auto overscroll-contain border-t border-white/10 bg-surface-950 px-4 py-4 lg:hidden">
+          <div className="flex flex-col gap-1 pb-[env(safe-area-inset-bottom,0px)]">
             {nav.map((item) => (
               <Link
                 key={item.href}

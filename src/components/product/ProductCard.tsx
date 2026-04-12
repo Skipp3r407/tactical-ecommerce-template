@@ -36,8 +36,8 @@ export function ProductCard({
             className="object-cover transition duration-500 group-hover:scale-[1.03]"
             sizes={
               featured
-                ? "(max-width:480px) 100vw, (max-width:1280px) 50vw, 25vw"
-                : "(max-width:768px) 100vw, 33vw"
+                ? "(max-width: 480px) 100vw, (max-width: 1280px) 50vw, 320px"
+                : "(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 420px"
             }
           />
         ) : null}

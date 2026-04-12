@@ -26,7 +26,7 @@ export function Hero() {
           className="pointer-events-none absolute inset-0 z-0 flex items-center justify-end overflow-hidden pr-0 sm:pr-4 md:pr-10 lg:pr-16"
           aria-hidden
         >
-          <div className="relative h-[min(93dvh,832px)] w-[min(92vw,1088px)] max-sm:h-[min(77dvh,608px)] max-sm:w-[min(100vw,672px)] sm:h-[min(104dvh,960px)] sm:w-[min(78vw,1152px)]">
+          <div className="relative ml-auto h-[min(93dvh,832px)] w-[min(92vw,720px)] max-sm:h-[min(77dvh,608px)] max-sm:w-[min(100vw,672px)] sm:h-[min(104dvh,960px)] sm:w-[min(78vw,720px)]">
             <Image
               src={images.logoBg}
               alt=""

@@ -34,14 +34,14 @@ export function PageHero({
   return (
     <section className="relative overflow-hidden border-b border-white/10">
       {imageUrl && imageOnly ? (
-        <div className="relative w-full bg-black">
+        <div className="relative mx-auto w-full max-w-[min(100vw,1920px)] bg-black">
           <Image
             src={imageUrl}
             alt={imageAlt}
             width={intrinsic.width}
             height={intrinsic.height}
             className="relative z-0 h-auto w-full max-w-full"
-            sizes="100vw"
+            sizes="(max-width: 1920px) 100vw, 1920px"
             priority
           />
           {/* Left / right edge fade into black (soft vignette) */}
@@ -61,7 +61,7 @@ export function PageHero({
             alt={imageAlt}
             fill
             className="object-cover object-center"
-            sizes="100vw"
+            sizes="(max-width: 1920px) 100vw, 1920px"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-surface-950 via-surface-950/85 to-surface-950/55" />

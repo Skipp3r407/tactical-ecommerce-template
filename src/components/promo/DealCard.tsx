@@ -51,20 +51,20 @@ export function DealCard({
             alt=""
             fill
             className="object-cover opacity-[0.55] transition duration-300 group-hover:opacity-[0.68]"
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 600px"
           />
         </div>
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-surface-950/55 via-surface-950/72 to-surface-950/92" />
-        <div className="pointer-events-none absolute -bottom-10 -right-8 z-0 h-40 w-40 rounded-full bg-brand-500/30 blur-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden />
+        <div className="pointer-events-none absolute -bottom-4 -right-3 z-0 h-24 w-24 rounded-full bg-brand-500/25 blur-xl opacity-0 transition-opacity duration-300 group-hover:opacity-80" aria-hidden />
       </>
     ) : null;
 
   const classes = cn(
     "group relative block overflow-hidden rounded-2xl border border-white/10 p-6",
-    "shadow-[0_20px_60px_-50px_rgba(0,0,0,0.9)]",
+    "shadow-[0_12px_40px_-28px_rgba(0,0,0,0.85)]",
     "transition-[transform,box-shadow,border-color] duration-300 ease-out will-change-transform",
-    "hover:-translate-y-0.5 hover:border-brand-600/35",
-    "hover:shadow-[0_28px_90px_-52px_rgba(220,38,38,0.28),0_22px_70px_-58px_rgba(234,88,12,0.14)]",
+    "hover:-translate-y-px hover:border-brand-600/35",
+    "hover:shadow-[0_0_0_1px_rgba(220,38,38,0.18),0_0_18px_-2px_rgba(220,38,38,0.22),0_0_30px_-6px_rgba(234,88,12,0.08)]",
     productSlug ? "bg-surface-950/35" : "bg-gradient-to-br from-surface-850/80 to-surface-900/40",
     className,
   );
@@ -72,7 +72,7 @@ export function DealCard({
   const hoverBloom =
     productSlug ? null : (
       <div
-        className="pointer-events-none absolute -bottom-8 -right-6 z-0 h-36 w-36 rounded-full bg-brand-500/25 blur-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        className="pointer-events-none absolute -bottom-3 -right-2 z-0 h-24 w-24 rounded-full bg-brand-500/22 blur-xl opacity-0 transition-opacity duration-300 group-hover:opacity-80"
         aria-hidden
       />
     );

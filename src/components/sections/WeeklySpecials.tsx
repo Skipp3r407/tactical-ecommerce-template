@@ -53,7 +53,7 @@ export function WeeklySpecials() {
               <div
                 className={cn(
                   "elevate-card group relative flex h-full min-h-[280px] flex-col overflow-hidden rounded-2xl border border-white/10 p-5 sm:min-h-[300px] sm:p-6",
-                  "shadow-[0_28px_90px_-55px_rgba(0,0,0,0.9)]",
+                  "shadow-[0_12px_40px_-28px_rgba(0,0,0,0.85)]",
                   s.productSlug
                     ? "bg-surface-950/40"
                     : "bg-gradient-to-b from-surface-850/95 to-surface-950/80",
@@ -67,7 +67,7 @@ export function WeeklySpecials() {
                         alt=""
                         fill
                         className="object-cover opacity-[0.55] transition duration-500 group-hover:opacity-[0.68]"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 320px"
                       />
                     </div>
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-surface-950/55 via-surface-950/72 to-surface-950/92" />
@@ -75,7 +75,7 @@ export function WeeklySpecials() {
                 ) : null}
 
                 <div className="absolute left-0 top-0 z-[1] h-full w-1 rounded-l-2xl bg-gradient-to-b from-brand-500 via-brand-600 to-accent-600 opacity-90" />
-                <div className="pointer-events-none absolute -right-8 -top-8 z-[1] h-28 w-28 rounded-full bg-brand-600/20 blur-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-hover:bg-brand-500/15" />
+                <div className="pointer-events-none absolute -right-5 -top-5 z-[1] h-20 w-20 rounded-full bg-brand-600/22 blur-lg opacity-0 transition-opacity duration-300 group-hover:opacity-90 group-hover:bg-brand-500/18" />
 
                 <div className="relative z-[2] flex flex-wrap items-center gap-2 pl-2">
                   {s.badge ? (
