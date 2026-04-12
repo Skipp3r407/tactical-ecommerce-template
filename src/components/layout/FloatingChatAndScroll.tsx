@@ -205,8 +205,8 @@ export function FloatingChatAndScroll() {
             alt=""
             width={112}
             height={112}
-            sizes="78px"
-            className="h-[78px] w-[78px] shrink-0 object-contain [mix-blend-mode:multiply]"
+            sizes="74px"
+            className="h-[74.1px] w-[74.1px] shrink-0 object-contain [mix-blend-mode:multiply]"
           />
         </button>
 
