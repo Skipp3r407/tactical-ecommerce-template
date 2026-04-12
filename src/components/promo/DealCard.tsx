@@ -55,19 +55,33 @@ export function DealCard({
           />
         </div>
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-surface-950/55 via-surface-950/72 to-surface-950/92" />
+        <div className="pointer-events-none absolute -bottom-10 -right-8 z-0 h-40 w-40 rounded-full bg-brand-500/30 blur-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden />
       </>
     ) : null;
 
   const classes = cn(
-    "group relative block overflow-hidden rounded-2xl border border-white/10 p-6 shadow-[0_20px_60px_-50px_rgba(0,0,0,0.9)] transition hover:border-brand-600/30 hover:shadow-[0_28px_90px_-55px_rgba(220,38,38,0.22)]",
+    "group relative block overflow-hidden rounded-2xl border border-white/10 p-6",
+    "shadow-[0_20px_60px_-50px_rgba(0,0,0,0.9)]",
+    "transition-[transform,box-shadow,border-color] duration-300 ease-out will-change-transform",
+    "hover:-translate-y-0.5 hover:border-brand-600/35",
+    "hover:shadow-[0_28px_90px_-52px_rgba(220,38,38,0.28),0_22px_70px_-58px_rgba(234,88,12,0.14)]",
     productSlug ? "bg-surface-950/35" : "bg-gradient-to-br from-surface-850/80 to-surface-900/40",
     className,
   );
+
+  const hoverBloom =
+    productSlug ? null : (
+      <div
+        className="pointer-events-none absolute -bottom-8 -right-6 z-0 h-36 w-36 rounded-full bg-brand-500/25 blur-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        aria-hidden
+      />
+    );
 
   if (href) {
     return (
       <Link href={href} className={classes}>
         {bgLayers}
+        {hoverBloom}
         {inner}
       </Link>
     );
@@ -76,6 +90,7 @@ export function DealCard({
   return (
     <div className={classes}>
       {bgLayers}
+      {hoverBloom}
       {inner}
     </div>
   );
