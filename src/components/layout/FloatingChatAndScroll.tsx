@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { cn } from "@/lib/cn";
 import { SITE_NAME_SHORT } from "@/config/brand";
+import { CHAT_NO_MATCH_REPLY, getChatbotReply } from "@/content/chatKnowledge";
 
 function ChevronUpIcon({ className }: { className?: string }) {
   return (
@@ -19,24 +20,12 @@ function ChevronUpIcon({ className }: { className?: string }) {
   );
 }
 
-/** Side-view handgun outline — matches stroke icons, reads at FAB size */
+/** Filled side-view handgun: frame/grip, then barrel rect on top for a clear muzzle */
 function PistolIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
-      <path
-        stroke="currentColor"
-        strokeWidth={1.85}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M4 17.5V13l2.4-4h6.3l1-1.7h4.3l3.8 1.1v3H16l-2.1 5.1H9.8L8.4 17.5H4z"
-      />
-      <path
-        stroke="currentColor"
-        strokeWidth={1.85}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M18.8 9.8h2.4v2.6"
-      />
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M13.45 12.25H6.9L4.85 13.9 3.1 21.05H6.55L8.1 16.5h3.1L12.25 21.05h3.45L14.5 13.95 15.85 12.25H13.45z" />
+      <rect x="13.4" y="8.7" width="8.55" height="3.55" rx="0.65" />
     </svg>
   );
 }
@@ -45,6 +34,8 @@ type Msg = { id: string; role: "user" | "assistant"; text: string };
 
 function botReply(userText: string): string {
   const t = userText.toLowerCase();
+  const fromKb = getChatbotReply(userText);
+  if (fromKb !== CHAT_NO_MATCH_REPLY) return fromKb;
   if (t.includes("hour") || t.includes("open"))
     return "Hours vary by location — use Contact for the latest. We're happy to confirm before you make the trip.";
   if (t.includes("ffl") || t.includes("transfer"))
@@ -217,7 +208,7 @@ export function FloatingChatAndScroll() {
           aria-controls={chatOpen ? panelId : undefined}
           aria-label={chatOpen ? "Close chat assistant" : "Open chat assistant"}
         >
-          <PistolIcon className="h-6 w-6" />
+          <PistolIcon className="h-7 w-7 shrink-0" />
         </button>
 
         {scrollVisible && (

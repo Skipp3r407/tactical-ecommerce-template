@@ -7,11 +7,13 @@ export const images = {
   /** Optional brand texture layered behind the logo in the hero */
   logoBg: "/images/logobg.png",
   hero: "/images/hero.jpg",
-  aboutBanner: "/images/banners/about.jpg",
+  aboutBanner: "/images/about.png",
 } as const;
 
 /**
- * PDP / card art — `/public/images/products/{slug}.jpg`. Demo catalog uses Unsplash-licensed stand-ins per slug.
+ * PDP / card art — `/public/images/products/{slug}.jpg`.
+ * Demo JPEGs are royalty-free stock from Unsplash (Unsplash License — https://unsplash.com/license).
+ * They illustrate category/title (not manufacturer packshots); replace with licensed SKU photography for production.
  */
 export function productImage(slug: string): string {
   return `/images/products/${slug}.jpg`;

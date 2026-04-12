@@ -4,8 +4,7 @@ import { productImage } from "@/config/images";
 /**
  * Eight demo SKUs for screenshots — replace with distributor import.
  * Image files: `/public/images/products/{slug}.jpg` (see each `slug` below).
- * Current JPEGs are representative Unsplash stock (https://unsplash.com/license) — not manufacturer packshots;
- * swap for true SKU photography when you have rights from the brand or distributor.
+ * Photos are Unsplash-licensed stock matched to product type/title (https://unsplash.com/license), not brand packshots.
  */
 export const products: Product[] = [
   {

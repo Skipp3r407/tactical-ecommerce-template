@@ -53,9 +53,9 @@ export function Footer() {
               <Image
                 src={images.logo}
                 alt={`${SITE_NAME} logo`}
-                width={98}
-                height={98}
-                className="h-[98px] w-[98px] object-contain"
+                width={118}
+                height={118}
+                className="h-[118px] w-[118px] object-contain"
               />
               <div className="text-center sm:text-left">
                 <span className="sr-only">{SITE_NAME_SHORT}</span>
