@@ -21,7 +21,7 @@ export function productImage(slug: string): string {
  * Category card + category hero — `/public/images/categories/{slug}.jpg`.
  * Stock photography (Unsplash License — free for commercial use; see https://unsplash.com/license):
  * `firearms` — rifle on table (Bexar Arms); `optics` — rifle scope close-up; `accessories` — rifle & loadout on stone;
- * `ammunition` — brass casings on black. Downloaded at 1600px wide for consistent card/hero crops.
+ * `ammunition` — dense pile of brass bullet shells (Unsplash). Downloaded at 1600px wide for consistent card/hero crops.
  */
 export function categoryImage(categorySlug: string): string {
   return `/images/categories/${categorySlug}.jpg`;

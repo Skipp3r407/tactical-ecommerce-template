@@ -4,6 +4,7 @@ import "./globals.css";
 import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { FloatingChatAndScroll } from "@/components/layout/FloatingChatAndScroll";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/config/brand";
 
 const inter = Inter({
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main>{children}</main>
         <Footer />
+        <FloatingChatAndScroll />
       </body>
     </html>
   );
