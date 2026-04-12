@@ -21,6 +21,7 @@ export default function AboutPage() {
         imageOnly
         title="About us"
         imageUrl={images.aboutBanner}
+        imageIntrinsicSize={images.aboutBannerSize}
         imageAlt={`${SITE_NAME} — About banner`}
       />
       <InnerPageLayout breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}>

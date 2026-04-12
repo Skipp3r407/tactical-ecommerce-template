@@ -8,6 +8,8 @@ export const images = {
   logoBg: "/images/logobg.png",
   hero: "/images/hero.jpg",
   aboutBanner: "/images/about.png",
+  /** Pixel dimensions of `aboutBanner` — update if the PNG is replaced */
+  aboutBannerSize: { width: 1536, height: 606 } as const,
 } as const;
 
 /**

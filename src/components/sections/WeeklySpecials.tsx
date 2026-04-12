@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { weeklySpecials } from "@/content/site";
+import { productImage } from "@/config/images";
 import { Reveal } from "@/components/motion/Reveal";
 import { Countdown } from "@/components/ui/Countdown";
 import { cn } from "@/lib/cn";
@@ -50,14 +52,32 @@ export function WeeklySpecials() {
             <Reveal key={s.id} delay={0.06 * i}>
               <div
                 className={cn(
-                  "elevate-card group relative flex h-full min-h-[280px] flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-surface-850/95 to-surface-950/80 p-5 sm:min-h-[300px] sm:p-6",
+                  "elevate-card group relative flex h-full min-h-[280px] flex-col overflow-hidden rounded-2xl border border-white/10 p-5 sm:min-h-[300px] sm:p-6",
                   "shadow-[0_28px_90px_-55px_rgba(220,38,38,0.25)]",
+                  s.productSlug
+                    ? "bg-surface-950/40"
+                    : "bg-gradient-to-b from-surface-850/95 to-surface-950/80",
                 )}
               >
-                <div className="absolute left-0 top-0 h-full w-1 rounded-l-2xl bg-gradient-to-b from-brand-500 via-brand-600 to-accent-600 opacity-90" />
-                <div className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-brand-600/10 blur-2xl transition group-hover:bg-brand-500/15" />
+                {s.productSlug ? (
+                  <>
+                    <div className="pointer-events-none absolute inset-0">
+                      <Image
+                        src={productImage(s.productSlug)}
+                        alt=""
+                        fill
+                        className="object-cover opacity-[0.2] transition duration-500 group-hover:opacity-[0.26]"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                      />
+                    </div>
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-surface-900/93 via-surface-950/90 to-surface-950/96" />
+                  </>
+                ) : null}
 
-                <div className="relative flex flex-wrap items-center gap-2 pl-2">
+                <div className="absolute left-0 top-0 z-[1] h-full w-1 rounded-l-2xl bg-gradient-to-b from-brand-500 via-brand-600 to-accent-600 opacity-90" />
+                <div className="pointer-events-none absolute -right-8 -top-8 z-[1] h-28 w-28 rounded-full bg-brand-600/10 blur-2xl transition group-hover:bg-brand-500/15" />
+
+                <div className="relative z-[2] flex flex-wrap items-center gap-2 pl-2">
                   {s.badge ? (
                     <span className="rounded-full bg-gradient-to-r from-red-950/80 to-red-900/40 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-red-100 ring-1 ring-red-400/30">
                       {s.badge}
@@ -67,7 +87,7 @@ export function WeeklySpecials() {
                 </div>
 
                 {s.priceNow ? (
-                  <div className="relative mt-5 flex flex-wrap items-end gap-3 border-b border-white/10 pb-4 pl-2">
+                  <div className="relative z-[2] mt-5 flex flex-wrap items-end gap-3 border-b border-white/10 pb-4 pl-2">
                     <span className="font-[family-name:var(--font-display)] text-4xl font-bold tracking-tight text-white sm:text-[2.75rem]">
                       {s.priceNow}
                     </span>
@@ -77,22 +97,22 @@ export function WeeklySpecials() {
                   </div>
                 ) : null}
 
-                <h3 className="relative mt-4 pl-2 font-[family-name:var(--font-display)] text-lg font-semibold leading-snug text-white sm:text-xl">
+                <h3 className="relative z-[2] mt-4 pl-2 font-[family-name:var(--font-display)] text-lg font-semibold leading-snug text-white sm:text-xl">
                   {s.title}
                 </h3>
-                <p className="relative mt-2 flex-1 pl-2 text-sm leading-relaxed text-zinc-400">{s.description}</p>
+                <p className="relative z-[2] mt-2 flex-1 pl-2 text-sm leading-relaxed text-zinc-400">{s.description}</p>
 
                 {s.productSlug ? (
                   <Link
                     href={`/shop/${s.productSlug}`}
-                    className="relative mt-5 inline-flex min-h-[48px] w-full items-center justify-center rounded-xl bg-gradient-to-r from-brand-600 to-brand-700 px-4 py-3 text-center text-sm font-semibold text-white ring-1 ring-white/10 transition hover:from-brand-500 hover:to-brand-600 sm:w-auto sm:justify-start sm:px-5"
+                    className="relative z-[2] mt-5 inline-flex min-h-[48px] w-full items-center justify-center rounded-xl bg-gradient-to-r from-brand-600 to-brand-700 px-4 py-3 text-center text-sm font-semibold text-white ring-1 ring-white/10 transition hover:from-brand-500 hover:to-brand-600 sm:w-auto sm:justify-start sm:px-5"
                   >
                     Shop this deal
                   </Link>
                 ) : (
                   <Link
                     href="/specials"
-                    className="relative mt-5 inline-flex min-h-[48px] items-center text-sm font-semibold text-brand-200"
+                    className="relative z-[2] mt-5 inline-flex min-h-[48px] items-center text-sm font-semibold text-brand-200"
                   >
                     Details →
                   </Link>

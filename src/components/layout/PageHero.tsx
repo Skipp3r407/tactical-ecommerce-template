@@ -12,6 +12,11 @@ export function PageHero({
   children,
   /** Full-bleed image only — no text overlays or darkening gradients (use for artwork banners) */
   imageOnly = false,
+  /**
+   * Natural pixel size of `imageUrl` when `imageOnly` — keeps aspect ratio (no cover/crop).
+   * Update if the asset changes.
+   */
+  imageIntrinsicSize,
 }: {
   eyebrow?: string;
   title: string;
@@ -22,15 +27,34 @@ export function PageHero({
   align?: "left" | "center";
   children?: React.ReactNode;
   imageOnly?: boolean;
+  imageIntrinsicSize?: { width: number; height: number };
 }) {
+  const intrinsic = imageIntrinsicSize ?? { width: 1600, height: 600 };
+
   return (
-    <section
-      className={cn(
-        "relative overflow-hidden border-b border-white/10",
-        imageOnly && imageUrl && "min-h-[min(52vh,40rem)] w-full",
-      )}
-    >
-      {imageUrl ? (
+    <section className="relative overflow-hidden border-b border-white/10">
+      {imageUrl && imageOnly ? (
+        <div className="relative w-full bg-black">
+          <Image
+            src={imageUrl}
+            alt={imageAlt}
+            width={intrinsic.width}
+            height={intrinsic.height}
+            className="relative z-0 h-auto w-full max-w-full"
+            sizes="100vw"
+            priority
+          />
+          {/* Left / right edge fade into black (soft vignette) */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-[clamp(1.5rem,10vw,7rem)] bg-gradient-to-r from-black via-black/80 to-transparent"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-[clamp(1.5rem,10vw,7rem)] bg-gradient-to-l from-black via-black/80 to-transparent"
+          />
+        </div>
+      ) : imageUrl ? (
         <div className="absolute inset-0">
           <Image
             src={imageUrl}
@@ -40,12 +64,8 @@ export function PageHero({
             sizes="100vw"
             priority
           />
-          {!imageOnly ? (
-            <>
-              <div className="absolute inset-0 bg-gradient-to-r from-surface-950 via-surface-950/85 to-surface-950/55" />
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_0%,rgba(220,38,38,0.12),transparent_55%)]" />
-            </>
-          ) : null}
+          <div className="absolute inset-0 bg-gradient-to-r from-surface-950 via-surface-950/85 to-surface-950/55" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_0%,rgba(220,38,38,0.12),transparent_55%)]" />
         </div>
       ) : (
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(220,38,38,0.08),transparent_50%)]" />

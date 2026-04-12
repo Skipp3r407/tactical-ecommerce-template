@@ -44,20 +44,20 @@ export function Header() {
           : "border-transparent bg-surface-950/65 backdrop-blur-md",
       )}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:py-4">
+      <div className="mx-auto flex min-w-0 max-w-7xl flex-nowrap items-center justify-between gap-2 px-4 py-3 md:gap-4 md:py-4">
         <Link href="/" className="group flex shrink-0 items-center">
           <Image
             src={images.logo}
             alt=""
-            width={459}
-            height={459}
+            width={413}
+            height={413}
             priority
-            className="h-[459px] w-[459px] object-contain"
+            className="h-[413px] w-[413px] object-contain"
           />
           <span className="sr-only">{SITE_NAME}</span>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden shrink-0 flex-nowrap items-center gap-0.5 lg:flex xl:gap-1">
           {nav.map((item) => {
             const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
             return (
@@ -65,7 +65,7 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "rounded-lg px-3 py-2 text-sm font-medium transition",
+                  "whitespace-nowrap rounded-lg px-2 py-2 text-sm font-medium transition xl:px-3",
                   active ? "bg-white/10 text-white" : "text-zinc-400 hover:bg-white/5 hover:text-white",
                 )}
               >
@@ -75,11 +75,13 @@ export function Header() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-2 lg:flex">
-          <Button variant="secondary" href="/request-product">
+        <div className="hidden shrink-0 flex-nowrap items-center gap-2 lg:flex">
+          <Button variant="secondary" href="/request-product" className="whitespace-nowrap">
             Request a product
           </Button>
-          <Button href="/shop">Shop now</Button>
+          <Button href="/shop" className="whitespace-nowrap">
+            Shop now
+          </Button>
         </div>
 
         <button
