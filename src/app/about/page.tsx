@@ -18,12 +18,10 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="Our story"
-        title="Built for customers who read before they buy"
-        description={`${SITE_NAME} exists to make serious gear easier to buy responsibly: accurate listings, plain-language policies, and a team that answers the phone when the decision matters.`}
+        imageOnly
+        title="About us"
         imageUrl={images.aboutBanner}
-        imageAlt={`${SITE_NAME} retail floor — demonstration photography`}
-        align="center"
+        imageAlt={`${SITE_NAME} — About banner`}
       />
       <InnerPageLayout breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}>
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
