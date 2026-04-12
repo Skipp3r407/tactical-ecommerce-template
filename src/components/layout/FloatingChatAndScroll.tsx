@@ -1,8 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { cn } from "@/lib/cn";
+import { images } from "@/config/images";
 import { SITE_NAME_SHORT } from "@/config/brand";
 import { CHAT_NO_MATCH_REPLY, getChatbotReply } from "@/content/chatKnowledge";
 
@@ -16,16 +18,6 @@ function ChevronUpIcon({ className }: { className?: string }) {
         strokeLinejoin="round"
         d="M5 15l7-7 7 7"
       />
-    </svg>
-  );
-}
-
-/** Filled side-view handgun: frame/grip, then barrel rect on top for a clear muzzle */
-function PistolIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-      <path d="M13.45 12.25H6.9L4.85 13.9 3.1 21.05H6.55L8.1 16.5h3.1L12.25 21.05h3.45L14.5 13.95 15.85 12.25H13.45z" />
-      <rect x="13.4" y="8.7" width="8.55" height="3.55" rx="0.65" />
     </svg>
   );
 }
@@ -208,7 +200,13 @@ export function FloatingChatAndScroll() {
           aria-controls={chatOpen ? panelId : undefined}
           aria-label={chatOpen ? "Close chat assistant" : "Open chat assistant"}
         >
-          <PistolIcon className="h-7 w-7 shrink-0" />
+          <Image
+            src={images.chatbotFab}
+            alt=""
+            width={112}
+            height={112}
+            className="h-7 w-7 shrink-0 rounded-md object-contain"
+          />
         </button>
 
         {scrollVisible && (

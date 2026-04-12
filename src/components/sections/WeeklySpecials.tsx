@@ -66,11 +66,11 @@ export function WeeklySpecials() {
                         src={productImage(s.productSlug)}
                         alt=""
                         fill
-                        className="object-cover opacity-[0.2] transition duration-500 group-hover:opacity-[0.26]"
+                        className="object-cover opacity-[0.55] transition duration-500 group-hover:opacity-[0.68]"
                         sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
                       />
                     </div>
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-surface-900/93 via-surface-950/90 to-surface-950/96" />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-surface-950/55 via-surface-950/72 to-surface-950/92" />
                   </>
                 ) : null}
 

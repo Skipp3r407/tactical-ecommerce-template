@@ -4,6 +4,8 @@
  */
 export const images = {
   logo: "/images/logo.png",
+  /** Floating chat assistant launcher (FAB) — `/public/images/chatbot.png` */
+  chatbotFab: "/images/chatbot.png",
   /** Optional brand texture layered behind the logo in the hero */
   logoBg: "/images/logobg.png",
   hero: "/images/hero.jpg",

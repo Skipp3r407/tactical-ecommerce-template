@@ -48,6 +48,7 @@ export default function SpecialsPage() {
                     badge={s.badge}
                     endsAt={s.endsAt}
                     href={s.productSlug ? `/shop/${s.productSlug}` : "/shop"}
+                    productSlug={s.productSlug}
                   />
                 </Reveal>
               ))}
