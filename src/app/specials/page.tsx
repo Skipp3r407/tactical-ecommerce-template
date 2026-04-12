@@ -7,11 +7,11 @@ import { DealCard } from "@/components/promo/DealCard";
 import { PromoBanner } from "@/components/promo/PromoBanner";
 import { PageHero } from "@/components/layout/PageHero";
 import { InnerPageLayout } from "@/components/layout/InnerPageLayout";
+import { SITE_NAME } from "@/config/brand";
 
 export const metadata: Metadata = {
   title: "Specials & deals",
-  description:
-    "Weekly specials, seasonal promos, and value picks at John’s Tactical Supply — real end dates, real inventory.",
+  description: `Weekly specials, seasonal promos, and value picks at ${SITE_NAME} — real end dates, real inventory.`,
 };
 
 export default function SpecialsPage() {

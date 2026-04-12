@@ -28,7 +28,7 @@ const productSlugs = [
 ];
 
 const files = [
-  [dummy("360x360/b91c1c/ffffff.png", "JTS"), "logo.png"],
+  [dummy("360x360/b91c1c/ffffff.png", "ALGA"), "logo.png"],
   [dummy("2400x1200/18181b/ea580c.jpg", "Hero"), "hero.jpg"],
   [dummy("960x600/27272a/f97316.jpg", "Firearms"), "categories/firearms.jpg"],
   [dummy("960x600/27272a/f97316.jpg", "Optics"), "categories/optics.jpg"],

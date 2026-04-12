@@ -1,4 +1,4 @@
-# Asset replacement guide — John’s Tactical Supply (demo)
+# Asset replacement guide — AfterLife Guns and Ammo (demo)
 
 Replace placeholder files under `public/images/` with final brand photography. Paths are referenced from `src/config/images.ts` and content slugs.
 

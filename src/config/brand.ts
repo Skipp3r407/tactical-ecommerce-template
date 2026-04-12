@@ -1,7 +1,7 @@
 /** Single source for public brand + domain — update before production launch */
 
-export const SITE_NAME = "John's Tactical Supply";
-export const SITE_NAME_SHORT = "JTS";
-export const SITE_URL = "https://johnstacticalsupply.com";
+export const SITE_NAME = "AfterLife Guns and Ammo";
+export const SITE_NAME_SHORT = "AfterLife";
+export const SITE_URL = "https://afterlifegunsandammo.com";
 /** Used in hero, metadata, and footer — client presentation tagline */
-export const SITE_TAGLINE = "Premium Firearms • Tactical Gear • Trusted Performance";
+export const SITE_TAGLINE = "Premium Firearms • Ammunition • Trusted Service";

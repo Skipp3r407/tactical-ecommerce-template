@@ -1,4 +1,4 @@
-# John’s Tactical Supply — Architecture & Planning
+# AfterLife Guns and Ammo — Architecture & Planning
 
 This document captures stack decisions, sitemap, content models, integration hooks, SEO, phases, and feature rationale. The running app lives in the repo root (`src/`).
 

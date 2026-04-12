@@ -3,6 +3,7 @@ import { hero } from "@/content/site";
 import { CTAButtons } from "@/components/ui/CTAButtons";
 import { Reveal } from "@/components/motion/Reveal";
 import { SITE_NAME, SITE_TAGLINE } from "@/config/brand";
+import { images } from "@/config/images";
 
 const trustChips = [
   { label: "FFL workflow ready" },
@@ -16,7 +17,7 @@ export function Hero() {
       <div className="absolute inset-0">
         <Image
           src={hero.backgroundImage}
-          alt={`${SITE_NAME} — premium firearms and tactical gear`}
+          alt={`${SITE_NAME} — premium firearms and ammunition`}
           fill
           priority
           className="object-cover object-center opacity-[0.88] sm:opacity-90"
@@ -27,9 +28,25 @@ export function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_100%_20%,rgba(234,88,12,0.12),transparent_42%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(3,3,4,0.92),transparent_45%)] sm:bg-[linear-gradient(to_top,rgba(3,3,4,0.88),transparent_50%)]" />
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-surface-950 to-transparent" />
+
+        {/* Large logo watermark — replaces placeholder “hero” art in the background layer */}
+        <div
+          className="pointer-events-none absolute inset-0 z-0 flex items-center justify-end overflow-hidden pr-0 sm:pr-4 md:pr-10 lg:pr-16"
+          aria-hidden
+        >
+          <div className="relative h-[min(58dvh,520px)] w-[min(92vw,680px)] max-sm:h-[min(48dvh,380px)] max-sm:w-[min(100vw,420px)] opacity-[0.085] mix-blend-soft-light sm:h-[min(65dvh,600px)] sm:w-[min(78vw,720px)] sm:opacity-[0.1]">
+            <Image
+              src={images.logo}
+              alt=""
+              fill
+              className="object-contain object-right"
+              sizes="(max-width: 640px) 92vw, 720px"
+            />
+          </div>
+        </div>
       </div>
 
-      <div className="relative mx-auto flex min-h-[min(100dvh,920px)] max-w-7xl flex-col justify-center px-4 py-24 sm:py-28 md:py-32 lg:py-36">
+      <div className="relative z-10 mx-auto flex min-h-[min(100dvh,920px)] max-w-7xl flex-col justify-center px-4 py-24 sm:py-28 md:py-32 lg:py-36">
         <Reveal>
           <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
             <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-start">

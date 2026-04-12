@@ -5,11 +5,11 @@ import { InnerPageLayout } from "@/components/layout/InnerPageLayout";
 import { Reveal } from "@/components/motion/Reveal";
 import { Countdown } from "@/components/ui/Countdown";
 import { Newsletter } from "@/components/sections/Newsletter";
+import { SITE_NAME } from "@/config/brand";
 
 export const metadata: Metadata = {
   title: "Giveaways & promotions",
-  description:
-    "John’s Tactical Supply giveaways — official rules, how to enter, and seasonal prize announcements.",
+  description: `${SITE_NAME} giveaways — official rules, how to enter, and seasonal prize announcements.`,
 };
 
 export default function GiveawaysPage() {

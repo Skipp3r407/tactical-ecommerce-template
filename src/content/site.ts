@@ -17,9 +17,9 @@ export const announcement = {
 };
 
 export const hero: HeroContent = {
-  headline: "Premium Firearms & Tactical Gear You Can Trust",
+  headline: "Premium Guns & Ammunition You Can Trust",
   subheadline:
-    "Built for performance. Backed by reliability. Explore top-quality firearms, ammo, and tactical equipment with competitive pricing and fast fulfillment — structured for distributor sync when you scale.",
+    "Built for performance. Backed by reliability. Explore top-quality firearms, ammunition, and range gear with competitive pricing and fast fulfillment — structured for distributor sync when you scale.",
   primaryCta: { label: "Shop the catalog", href: "/shop" },
   secondaryCta: { label: "View weekly specials", href: "/specials" },
   backgroundImage: images.hero,
@@ -202,7 +202,7 @@ export const giveawayCampaign: GiveawayCampaign = {
 
 export const contactBlock = {
   phone: "(555) 010-0199",
-  email: "orders@johnstacticalsupply.com",
+  email: "orders@afterlifegunsandammo.com",
   hours: "Mon–Sat 10a–7p · Sun closed",
   addressLine: "123 Commerce Dr, Suite 100",
   cityStateZip: "Your City, ST 00000",

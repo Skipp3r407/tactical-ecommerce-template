@@ -22,10 +22,10 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} | Firearms & tactical gear`,
+    default: `${SITE_NAME} | Guns & ammunition`,
     template: `%s | ${SITE_NAME}`,
   },
-  description: `${SITE_TAGLINE}. ${SITE_NAME} — premium demo storefront for firearms & tactical retail: weekly specials, promos, giveaways, and distributor-ready catalog structure.`,
+  description: `${SITE_TAGLINE}. ${SITE_NAME} — premium demo storefront for firearms and ammunition: weekly specials, promos, giveaways, and distributor-ready catalog structure.`,
   openGraph: {
     title: SITE_NAME,
     description: `${SITE_TAGLINE}. Presentation-quality ecommerce demo — polished, mobile-first, built to scale.`,

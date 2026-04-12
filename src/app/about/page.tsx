@@ -6,11 +6,11 @@ import { InnerPageLayout } from "@/components/layout/InnerPageLayout";
 import { Reveal } from "@/components/motion/Reveal";
 import { Button } from "@/components/ui/Button";
 import { images } from "@/config/images";
+import { SITE_NAME } from "@/config/brand";
 
 export const metadata: Metadata = {
   title: "About us",
-  description:
-    "John’s Tactical Supply — our mission, how we serve customers, and why we lead with clarity in firearms and tactical retail.",
+  description: `${SITE_NAME} — our mission, how we serve customers, and why we lead with clarity in firearms and ammunition retail.`,
 };
 
 export default function AboutPage() {
@@ -19,9 +19,9 @@ export default function AboutPage() {
       <PageHero
         eyebrow="Our story"
         title="Built for customers who read before they buy"
-        description="John’s Tactical Supply exists to make serious gear easier to buy responsibly: accurate listings, plain-language policies, and a team that answers the phone when the decision matters."
+        description={`${SITE_NAME} exists to make serious gear easier to buy responsibly: accurate listings, plain-language policies, and a team that answers the phone when the decision matters.`}
         imageUrl={images.aboutBanner}
-        imageAlt="John’s Tactical Supply retail floor — demonstration photography"
+        imageAlt={`${SITE_NAME} retail floor — demonstration photography`}
         align="center"
       />
       <InnerPageLayout breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}>

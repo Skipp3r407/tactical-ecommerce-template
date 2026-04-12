@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
-import { SITE_NAME, SITE_NAME_SHORT } from "@/config/brand";
+import { SITE_NAME } from "@/config/brand";
 import { images } from "@/config/images";
 
 const nav = [
@@ -45,19 +45,16 @@ export function Header() {
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:py-4">
-        <Link href="/" className="group flex items-center gap-2">
+        <Link href="/" className="group flex shrink-0 items-center">
           <Image
             src={images.logo}
-            alt={`${SITE_NAME} logo`}
-            width={36}
-            height={36}
+            alt=""
+            width={72}
+            height={72}
             priority
-            className="h-9 w-9 rounded-md object-cover shadow-lg shadow-brand-900/40 ring-1 ring-white/10"
+            className="h-[72px] w-[72px] rounded-md object-cover shadow-lg shadow-brand-900/40 ring-1 ring-white/10"
           />
-          <span className="sr-only">{SITE_NAME_SHORT}</span>
-          <span className="font-[family-name:var(--font-display)] text-lg font-bold tracking-wide text-white">
-            John&apos;s <span className="text-brand-400">Tactical Supply</span>
-          </span>
+          <span className="sr-only">{SITE_NAME}</span>
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">

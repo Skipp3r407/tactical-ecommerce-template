@@ -9,7 +9,7 @@ export const products: Product[] = [
   {
     id: "1",
     slug: "sig-p320-m18-9mm",
-    sku: "JTS-HG-P320M18",
+    sku: "ALGA-HG-P320M18",
     distributorSku: "SIG-320CA-9-BXR3",
     title: "Sig Sauer P320 M18 9mm",
     shortDescription:
@@ -47,7 +47,7 @@ export const products: Product[] = [
   {
     id: "2",
     slug: "springfield-hellcat-pro-osp",
-    sku: "JTS-HG-HCPROOSP",
+    sku: "ALGA-HG-HCPROOSP",
     distributorSku: "SPG-HCPRO9OSP",
     title: "Springfield Hellcat Pro OSP 9mm",
     shortDescription:
@@ -79,7 +79,7 @@ export const products: Product[] = [
   {
     id: "3",
     slug: "aero-m4e1-pro-556-carbine",
-    sku: "JTS-RF-M4E1PRO16",
+    sku: "ALGA-RF-M4E1PRO16",
     distributorSku: "APRG-556-M4E1-16",
     title: 'Aero Precision M4E1 Pro 16" 5.56 NATO',
     shortDescription:
@@ -117,7 +117,7 @@ export const products: Product[] = [
   {
     id: "4",
     slug: "hornady-critical-defense-9mm-20",
-    sku: "JTS-AM-CD9-20",
+    sku: "ALGA-AM-CD9-20",
     distributorSku: "HRN-90240-20",
     title: "Hornady Critical Defense 9mm 115gr (20 rounds)",
     shortDescription:
@@ -144,7 +144,7 @@ export const products: Product[] = [
   {
     id: "5",
     slug: "vortex-sparc-solar-red-dot",
-    sku: "JTS-OP-SPARC-SOL",
+    sku: "ALGA-OP-SPARC-SOL",
     distributorSku: "VOR-SPC-AR2",
     title: "Vortex SPARC Solar Red Dot",
     shortDescription:
@@ -172,7 +172,7 @@ export const products: Product[] = [
   {
     id: "6",
     slug: "streamlight-tlr-7-sub",
-    sku: "JTS-LT-TLR7SUB",
+    sku: "ALGA-LT-TLR7SUB",
     distributorSku: "STL-69406",
     title: "Streamlight TLR-7 Sub Weapon Light",
     shortDescription:
@@ -199,7 +199,7 @@ export const products: Product[] = [
   {
     id: "7",
     slug: "magpul-ms4-dual-qd-sling-gen2",
-    sku: "JTS-SL-MS4G2",
+    sku: "ALGA-SL-MS4G2",
     distributorSku: "MAG518",
     title: "Magpul MS4 Dual QD Sling Gen 2",
     shortDescription:
@@ -226,7 +226,7 @@ export const products: Product[] = [
   {
     id: "8",
     slug: "unity-fast-micro-mount-fde",
-    sku: "JTS-MT-FASTMICFDE",
+    sku: "ALGA-MT-FASTMICFDE",
     distributorSku: "UNY-FST-MICR-FDE",
     title: "Unity Tactical FAST Micro Mount — FDE",
     shortDescription:
