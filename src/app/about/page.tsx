@@ -6,6 +6,7 @@ import { InnerPageLayout } from "@/components/layout/InnerPageLayout";
 import { Reveal } from "@/components/motion/Reveal";
 import { Button } from "@/components/ui/Button";
 import { images } from "@/config/images";
+import { gunPhotoSrc } from "@/config/gunPhotos";
 import { SITE_NAME } from "@/config/brand";
 
 export const metadata: Metadata = {
@@ -49,15 +50,15 @@ export default function AboutPage() {
             <Reveal delay={0.06}>
               <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/10 shadow-[0_40px_120px_-70px_rgba(220,38,38,0.35)]">
                 <Image
-                  src={images.hero}
-                  alt="Tactical gear and firearms retail environment"
+                  src={gunPhotoSrc("SEMI-AUTO RIFLE.jpg")}
+                  alt={`${SITE_NAME} — in-store firearms display`}
                   fill
                   className="object-cover"
                   sizes="(max-width:1024px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-surface-950/85 to-transparent" />
                 <p className="absolute bottom-6 left-6 max-w-xs text-sm text-zinc-300">
-                  Imagery placeholder — swap for your range, storefront, or team photography.
+                  From our shop floor — real inventory photography.
                 </p>
               </div>
             </Reveal>

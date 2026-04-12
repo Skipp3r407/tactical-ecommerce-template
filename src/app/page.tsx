@@ -13,6 +13,7 @@ import { RequestProductTeaser } from "@/components/sections/RequestProductTeaser
 import { FaqPreview } from "@/components/sections/FaqPreview";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { Newsletter } from "@/components/sections/Newsletter";
+import { GunPhotosGallery } from "@/components/sections/GunPhotosGallery";
 import { products } from "@/content/products";
 
 function savingsAmount(p: (typeof products)[0]) {
@@ -41,6 +42,7 @@ export default function HomePage() {
         description="Handguns, carbine, optic, light, sling, and defensive ammo — optimized grid for desktop screenshots and stacked cards on mobile."
       />
       <FeaturedCategories />
+      <GunPhotosGallery />
       <PromoStrip />
       <ProductRow
         eyebrow="Deals"

@@ -49,10 +49,10 @@ export function Header() {
           <Image
             src={images.logo}
             alt=""
-            width={72}
-            height={72}
+            width={115}
+            height={115}
             priority
-            className="h-[72px] w-[72px] rounded-md object-cover shadow-lg shadow-brand-900/40 ring-1 ring-white/10"
+            className="h-[115px] w-[115px] object-contain"
           />
           <span className="sr-only">{SITE_NAME}</span>
         </Link>

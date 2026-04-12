@@ -5,7 +5,6 @@ export interface HeroContent {
   subheadline: string;
   primaryCta: { label: string; href: string };
   secondaryCta: { label: string; href: string };
-  backgroundImage: string;
 }
 
 export interface PromoBanner {

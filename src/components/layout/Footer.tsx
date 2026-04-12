@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { contactBlock } from "@/content/site";
 import { categories } from "@/content/categories";
-import { SITE_NAME, SITE_NAME_SHORT, SITE_TAGLINE } from "@/config/brand";
+import { ELEVATE_DIGITAL_STUDIOS_URL, SITE_NAME, SITE_NAME_SHORT, SITE_TAGLINE } from "@/config/brand";
+import { gunPhotoFilmstripSrcs } from "@/config/gunPhotos";
 import { images } from "@/config/images";
 
 const shop = [
@@ -35,13 +36,26 @@ export function Footer() {
       <div className="relative mx-auto max-w-7xl px-4 py-14 sm:py-16 md:py-20">
         <div className="grid gap-12 text-center md:grid-cols-2 md:gap-10 md:text-left lg:grid-cols-4 lg:gap-12">
           <div className="flex flex-col items-center md:items-start">
+            <div
+              className="mb-4 flex w-full max-w-md flex-wrap justify-center gap-1.5 md:justify-start"
+              aria-hidden
+            >
+              {gunPhotoFilmstripSrcs.map((src) => (
+                <div
+                  key={src}
+                  className="relative h-10 w-14 shrink-0 overflow-hidden rounded-md border border-white/10 sm:h-11 sm:w-[4.5rem]"
+                >
+                  <Image src={src} alt="" fill className="object-cover" sizes="72px" />
+                </div>
+              ))}
+            </div>
             <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:gap-3">
               <Image
                 src={images.logo}
                 alt={`${SITE_NAME} logo`}
-                width={44}
-                height={44}
-                className="h-11 w-11 rounded-lg object-cover shadow-lg shadow-black/40 ring-1 ring-white/10"
+                width={70}
+                height={70}
+                className="h-[70px] w-[70px] object-contain"
               />
               <div className="text-center sm:text-left">
                 <span className="sr-only">{SITE_NAME_SHORT}</span>
@@ -58,7 +72,15 @@ export function Footer() {
               ready for distributor feeds.
             </p>
             <p className="mt-5 text-xs text-zinc-600">
-              Experience by <span className="text-zinc-500">Elevate Digital Studios</span>
+              Powered by{" "}
+              <a
+                href={ELEVATE_DIGITAL_STUDIOS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-500 underline underline-offset-2 transition hover:text-zinc-400"
+              >
+                Elevate Digital Studios
+              </a>
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-2 md:justify-start">
               {["Secure checkout ready", "FFL messaging", "Mobile optimized"].map((t) => (

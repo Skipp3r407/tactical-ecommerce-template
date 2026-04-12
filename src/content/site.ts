@@ -7,7 +7,7 @@ import type {
   Testimonial,
   VideoItem,
 } from "@/lib/types/content";
-import { bannerImage, images, mediaThumbnail } from "@/config/images";
+import { bannerImage, mediaThumbnail } from "@/config/images";
 import { SITE_TAGLINE } from "@/config/brand";
 
 export const announcement = {
@@ -22,7 +22,6 @@ export const hero: HeroContent = {
     "Built for performance. Backed by reliability. Explore top-quality firearms, ammunition, and range gear with competitive pricing and fast fulfillment — structured for distributor sync when you scale.",
   primaryCta: { label: "Shop the catalog", href: "/shop" },
   secondaryCta: { label: "View weekly specials", href: "/specials" },
-  backgroundImage: images.hero,
 };
 
 export const trustStats = [

@@ -2,7 +2,7 @@ import Image from "next/image";
 import { hero } from "@/content/site";
 import { CTAButtons } from "@/components/ui/CTAButtons";
 import { Reveal } from "@/components/motion/Reveal";
-import { SITE_NAME, SITE_TAGLINE } from "@/config/brand";
+import { SITE_TAGLINE } from "@/config/brand";
 import { images } from "@/config/images";
 
 const trustChips = [
@@ -14,18 +14,10 @@ const trustChips = [
 export function Hero() {
   return (
     <section className="relative min-h-[min(100dvh,920px)] overflow-hidden border-b border-white/10">
-      <div className="absolute inset-0">
-        <Image
-          src={hero.backgroundImage}
-          alt={`${SITE_NAME} — premium firearms and ammunition`}
-          fill
-          priority
-          className="object-cover object-center opacity-[0.88] sm:opacity-90"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-surface-950 via-surface-950/[0.97] to-surface-950/55 sm:via-surface-950/96 sm:to-surface-950/50" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_25%,rgba(220,38,38,0.2),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_100%_20%,rgba(234,88,12,0.12),transparent_42%)]" />
+      <div className="absolute inset-0 bg-surface-950">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_70%_at_50%_-15%,rgba(220,38,38,0.14),transparent_52%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_100%_8%,rgba(234,88,12,0.1),transparent_48%)]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-surface-950 via-surface-950 to-surface-950/70 sm:to-surface-950/60" />
         <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(3,3,4,0.92),transparent_45%)] sm:bg-[linear-gradient(to_top,rgba(3,3,4,0.88),transparent_50%)]" />
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-surface-950 to-transparent" />
 
@@ -34,12 +26,20 @@ export function Hero() {
           className="pointer-events-none absolute inset-0 z-0 flex items-center justify-end overflow-hidden pr-0 sm:pr-4 md:pr-10 lg:pr-16"
           aria-hidden
         >
-          <div className="relative h-[min(58dvh,520px)] w-[min(92vw,680px)] max-sm:h-[min(48dvh,380px)] max-sm:w-[min(100vw,420px)] opacity-[0.085] mix-blend-soft-light sm:h-[min(65dvh,600px)] sm:w-[min(78vw,720px)] sm:opacity-[0.1]">
+          <div className="relative h-[min(93dvh,832px)] w-[min(92vw,1088px)] max-sm:h-[min(77dvh,608px)] max-sm:w-[min(100vw,672px)] sm:h-[min(104dvh,960px)] sm:w-[min(78vw,1152px)]">
+            <Image
+              src={images.logoBg}
+              alt=""
+              fill
+              className="object-contain object-right opacity-[0.045] sm:opacity-[0.055]"
+              sizes="(max-width: 640px) 92vw, 720px"
+              aria-hidden
+            />
             <Image
               src={images.logo}
               alt=""
               fill
-              className="object-contain object-right"
+              className="object-contain object-right opacity-[0.085] mix-blend-soft-light sm:opacity-[0.1]"
               sizes="(max-width: 640px) 92vw, 720px"
             />
           </div>
