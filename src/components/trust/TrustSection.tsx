@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Reveal } from "@/components/motion/Reveal";
 import { trustStats } from "@/content/site";
 
@@ -20,12 +21,24 @@ export function TrustSection() {
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {trustStats.map((s, i) => (
             <Reveal key={s.label} delay={0.05 * i}>
-              <div className="elevate-card rounded-2xl border border-white/10 bg-surface-850/50 p-6 text-center lg:text-left">
-                <p className="font-[family-name:var(--font-display)] text-3xl font-semibold text-white md:text-4xl">
-                  {s.value}
-                </p>
-                <p className="mt-2 text-sm font-medium text-brand-200/90">{s.label}</p>
-                <p className="mt-3 text-sm leading-relaxed text-zinc-500">{s.caption}</p>
+              <div className="elevate-card flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-surface-850/50 text-center lg:text-left">
+                <div className="relative aspect-[16/9] w-full shrink-0 border-b border-white/10 bg-surface-900/40">
+                  <Image
+                    src={s.image}
+                    alt=""
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    unoptimized
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <p className="font-[family-name:var(--font-display)] text-3xl font-semibold text-white md:text-4xl">
+                    {s.value}
+                  </p>
+                  <p className="mt-2 text-sm font-medium text-brand-200/90">{s.label}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-zinc-500">{s.caption}</p>
+                </div>
               </div>
             </Reveal>
           ))}

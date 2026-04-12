@@ -7,6 +7,14 @@ export interface HeroContent {
   secondaryCta: { label: string; href: string };
 }
 
+/** Homepage trust row — optional header art in `/public/images/trust/` */
+export interface TrustStat {
+  value: string;
+  label: string;
+  caption: string;
+  image: string;
+}
+
 export interface PromoBanner {
   id: string;
   title: string;

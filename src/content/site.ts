@@ -5,6 +5,7 @@ import type {
   PromoBanner,
   SpecialItem,
   Testimonial,
+  TrustStat,
   VideoItem,
 } from "@/lib/types/content";
 import { bannerImage, mediaThumbnail } from "@/config/images";
@@ -24,30 +25,34 @@ export const hero: HeroContent = {
   secondaryCta: { label: "View weekly specials", href: "/specials" },
 };
 
-export const trustStats = [
+export const trustStats: TrustStat[] = [
   {
     value: "24hr",
     label: "Response standard",
     caption:
       "We target replies to product and order questions within one business day — and we’re often faster when the counter is quiet.",
+    image: "/images/trust/stat-24hr.svg",
   },
   {
     value: "FFL",
     label: "Transfers, explained",
     caption:
       "Firearms route through licensed dealers with expectations spelled out up front: routing, paperwork, and what you’ll need at pickup.",
+    image: "/images/trust/stat-ffl.svg",
   },
   {
     value: "Spec",
     label: "Details that matter",
     caption:
       "Listings emphasize what you actually need to decide: caliber, compatibility, mount standards — not filler.",
+    image: "/images/trust/stat-spec.svg",
   },
   {
     value: "US",
     label: "Fulfillment you can plan around",
     caption:
       "Shipping options, restrictions, and hazmat rules are communicated clearly so you’re not surprised at checkout.",
+    image: "/images/trust/stat-us.svg",
   },
 ];
 
