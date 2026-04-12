@@ -32,9 +32,14 @@ export function PageHero({
   const intrinsic = imageIntrinsicSize ?? { width: 1600, height: 600 };
 
   return (
-    <section className="relative overflow-hidden border-b border-white/10">
+    <section
+      className={cn(
+        "relative overflow-hidden border-b border-white/10",
+        imageUrl && imageOnly && "bg-black",
+      )}
+    >
       {imageUrl && imageOnly ? (
-        <div className="relative flex w-full justify-center bg-surface-950 px-4">
+        <div className="relative flex w-full justify-center bg-black px-4">
           <div
             className="relative z-0 inline-block max-w-full"
             style={{
