@@ -72,8 +72,8 @@ export function Header() {
             width={413}
             height={413}
             priority
-            sizes="(max-width: 1024px) 160px, 200px"
-            className="h-7 w-auto max-h-9 object-contain object-center sm:h-8 sm:max-h-10 md:h-9 lg:h-10 lg:object-left"
+            sizes="(max-width: 1023px) 128px, (max-width: 1279px) 220px, 256px"
+            className="h-7 w-auto max-h-9 object-contain object-center sm:h-8 sm:max-h-10 md:h-9 md:max-h-10 lg:h-14 lg:max-h-none lg:object-left xl:h-16"
           />
           <span className="sr-only">{SITE_NAME}</span>
         </Link>

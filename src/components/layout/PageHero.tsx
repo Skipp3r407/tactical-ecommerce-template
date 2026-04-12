@@ -34,25 +34,26 @@ export function PageHero({
   return (
     <section className="relative overflow-hidden border-b border-white/10">
       {imageUrl && imageOnly ? (
-        <div className="relative mx-auto w-full max-w-[min(100vw,1920px)] bg-black">
-          <Image
-            src={imageUrl}
-            alt={imageAlt}
-            width={intrinsic.width}
-            height={intrinsic.height}
-            className="relative z-0 h-auto w-full max-w-full"
-            sizes="(max-width: 1920px) 100vw, 1920px"
-            priority
-          />
-          {/* Left / right edge fade into black (soft vignette) */}
+        <div className="relative w-full bg-surface-950">
+          {/* 80% scale (20% smaller); radial mask feathers edges to transparent over page bg */}
           <div
-            aria-hidden
-            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-[clamp(1.5rem,10vw,7rem)] bg-gradient-to-r from-black via-black/80 to-transparent"
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-[clamp(1.5rem,10vw,7rem)] bg-gradient-to-l from-black via-black/80 to-transparent"
-          />
+            className="relative z-0 mx-auto w-[80%] max-w-[1536px]"
+            style={{
+              WebkitMaskImage:
+                "radial-gradient(ellipse 96% 92% at 50% 50%, #000 52%, transparent 100%)",
+              maskImage: "radial-gradient(ellipse 96% 92% at 50% 50%, #000 52%, transparent 100%)",
+            }}
+          >
+            <Image
+              src={imageUrl}
+              alt={imageAlt}
+              width={intrinsic.width}
+              height={intrinsic.height}
+              className="relative h-auto w-full max-w-full"
+              sizes="(max-width: 1920px) 80vw, 1536px"
+              priority
+            />
+          </div>
         </div>
       ) : imageUrl ? (
         <div className="absolute inset-0">

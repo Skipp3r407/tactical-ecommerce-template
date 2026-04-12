@@ -193,8 +193,8 @@ export function FloatingChatAndScroll() {
           type="button"
           onClick={() => setChatOpen((o) => !o)}
           className={cn(
-            "flex h-36 w-36 items-center justify-center rounded-full border border-white/20 bg-surface-950/25 text-white shadow-[0_18px_50px_-22px_rgba(0,0,0,0.45)] backdrop-blur-xl transition hover:border-brand-500/50 hover:bg-surface-950/35 focus-visible:outline-none",
-            chatOpen && "border-brand-500/55 bg-surface-950/40 ring-2 ring-brand-600/20",
+            "flex min-h-[44px] min-w-[44px] items-center justify-center rounded-md border-0 bg-transparent p-0 shadow-none backdrop-blur-0 transition hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/55 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-950",
+            chatOpen && "opacity-100",
           )}
           aria-expanded={chatOpen}
           aria-controls={chatOpen ? panelId : undefined}
@@ -205,8 +205,8 @@ export function FloatingChatAndScroll() {
             alt=""
             width={112}
             height={112}
-            sizes="112px"
-            className="h-28 w-28 shrink-0 rounded-lg object-contain opacity-90"
+            sizes="78px"
+            className="h-[78px] w-[78px] shrink-0 object-contain [mix-blend-mode:multiply]"
           />
         </button>
 
