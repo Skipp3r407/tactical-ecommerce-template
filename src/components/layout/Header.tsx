@@ -72,8 +72,8 @@ export function Header() {
             width={413}
             height={413}
             priority
-            sizes="(max-width: 1023px) 334px, (max-width: 1279px) 576px, 672px"
-            className="h-[4.586rem] w-auto max-h-[5.897rem] object-contain object-center sm:h-[5.242rem] sm:max-h-[6.552rem] md:h-[5.733rem] md:max-h-[6.552rem] lg:h-[9.009rem] lg:max-h-none lg:object-left xl:h-[10.483rem]"
+            sizes="(max-width: 413px) 100vw, 413px"
+            className="h-auto w-auto max-w-[min(100%,413px)] shrink-0 object-contain object-center lg:object-left"
           />
           <span className="sr-only">{SITE_NAME}</span>
         </Link>

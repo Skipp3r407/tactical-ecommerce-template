@@ -34,10 +34,9 @@ export function PageHero({
   return (
     <section className="relative overflow-hidden border-b border-white/10">
       {imageUrl && imageOnly ? (
-        <div className="relative w-full bg-surface-950">
-          {/* 80% scale (20% smaller); radial mask feathers edges to transparent over page bg */}
+        <div className="relative flex w-full justify-center bg-surface-950 px-4">
           <div
-            className="relative z-0 mx-auto w-[80%] max-w-[1536px]"
+            className="relative z-0 inline-block max-w-full"
             style={{
               WebkitMaskImage:
                 "radial-gradient(ellipse 96% 92% at 50% 50%, #000 52%, transparent 100%)",
@@ -49,8 +48,8 @@ export function PageHero({
               alt={imageAlt}
               width={intrinsic.width}
               height={intrinsic.height}
-              className="relative h-auto w-full max-w-full"
-              sizes="(max-width: 1920px) 80vw, 1536px"
+              className="relative h-auto w-auto max-w-full"
+              sizes="(max-width: 1536px) 100vw, 1536px"
               priority
             />
           </div>
