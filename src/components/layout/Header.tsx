@@ -69,11 +69,11 @@ export function Header() {
           <Image
             src={images.logo}
             alt=""
-            width={413}
-            height={413}
+            width={351}
+            height={351}
             priority
-            sizes="(max-width: 413px) 100vw, 413px"
-            className="h-auto w-auto max-w-[min(100%,413px)] shrink-0 object-contain object-center lg:object-left"
+            sizes="(max-width: 351px) 100vw, 351px"
+            className="h-auto w-auto max-w-[min(100%,351px)] shrink-0 object-contain object-center lg:object-left"
           />
           <span className="sr-only">{SITE_NAME}</span>
         </Link>
