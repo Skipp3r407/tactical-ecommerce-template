@@ -131,8 +131,37 @@ export function BulletCursor() {
           className={`bullet-cursor ${pressed ? "bullet-cursor--pressed" : ""}`}
           style={{ left: cursor.x, top: cursor.y }}
         >
-          <span className="bullet-cursor__body" />
-          <span className="bullet-cursor__tip" />
+          <svg
+            className="bullet-cursor__svg"
+            width="34"
+            height="14"
+            viewBox="0 0 34 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="bulletFill" x1="0" y1="7" x2="34" y2="7" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#F7D089" />
+                <stop offset="0.55" stopColor="#DBB56F" />
+                <stop offset="1" stopColor="#8A5E3A" />
+              </linearGradient>
+              <linearGradient id="bulletTip" x1="20" y1="7" x2="34" y2="7" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#D6B172" />
+                <stop offset="1" stopColor="#9E744C" />
+              </linearGradient>
+            </defs>
+            {/* casing */}
+            <rect x="1" y="3" width="21" height="8" rx="4" fill="url(#bulletFill)" />
+            {/* tip */}
+            <path d="M22 3 L33 7 L22 11 Z" fill="url(#bulletTip)" />
+            {/* outline + subtle highlight */}
+            <path
+              d="M5 3.5C3.067 3.5 1.5 5.067 1.5 7C1.5 8.933 3.067 10.5 5 10.5H22.1L32.1 7L22.1 3.5H5Z"
+              stroke="rgba(0,0,0,0.42)"
+              strokeWidth="1"
+            />
+            <path d="M4 5.2H20.2" stroke="rgba(255,255,255,0.22)" strokeLinecap="round" />
+          </svg>
         </span>
       ) : null}
     </div>

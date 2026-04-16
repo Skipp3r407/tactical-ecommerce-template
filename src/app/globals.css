@@ -96,35 +96,22 @@ body {
   top: 0;
   display: inline-flex;
   align-items: center;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotate(-28deg);
   transform-origin: center;
   transition: transform 120ms ease;
 }
 
 .bullet-cursor--pressed {
-  transform: translate(-50%, -50%) scale(0.92);
+  transform: translate(-50%, -50%) rotate(-28deg) scale(0.92);
 }
 
-.bullet-cursor__body {
+.bullet-cursor__svg {
   display: block;
-  width: 20px;
-  height: 8px;
-  border-radius: 9999px 3px 3px 9999px;
-  background: linear-gradient(90deg, #f7d089 0%, #dbb56f 52%, #8a5e3a 100%);
-  box-shadow:
-    0 0 0 1px rgba(0, 0, 0, 0.38),
-    0 0 10px rgba(220, 38, 38, 0.22);
-}
-
-.bullet-cursor__tip {
-  display: block;
-  width: 0;
-  height: 0;
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  border-left: 8px solid #c8a56a;
-  margin-left: -1px;
-  filter: drop-shadow(0 0 2px rgba(255, 220, 170, 0.45));
+  width: 34px;
+  height: 14px;
+  filter:
+    drop-shadow(0 0 0 rgba(0, 0, 0, 0))
+    drop-shadow(0 0 10px rgba(220, 38, 38, 0.2));
 }
 
 .bullet-smoke-particle {
